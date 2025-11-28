@@ -64,7 +64,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final int MAX_LED = 255;
 
     private static final String CATEGORY_DISPLAY = "display";
-    private static final String PREF_DEVICE_DOZE = "device_doze";
 
     private static final String CATEGORY_HALL_WAKEUP = "hall_wakeup";
     public static final String PREF_HALL_WAKEUP = "hall";
@@ -74,7 +73,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_THERMAL = "thermal";
     public static final String THERMAL_PATH = "/sys/devices/virtual/thermal/thermal_message/sconfig";
 
-    private static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
     private static final String DEVICE_JASON_PACKAGE_NAME = "org.lineageos.settings.devicex";
     private static final String PREF_DEVICE_JASON = "device_jason";
@@ -135,10 +133,6 @@ public class DeviceSettings extends PreferenceFragment implements
         }
         // Display Category
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
-        // Doze
-        if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
-            displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
-        }
         // Jason Settings
         if (isAppNotInstalled(DEVICE_JASON_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_JASON));

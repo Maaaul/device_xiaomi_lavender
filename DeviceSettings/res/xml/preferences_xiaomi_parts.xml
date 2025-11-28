@@ -68,22 +68,7 @@
             android:icon="@drawable/ic_mic"
             android:title="@string/mic_gain"/>
     </PreferenceCategory>
-    
-    <PreferenceCategory
-        android:key="display"
-        android:title="@string/display_title">
 
-        <Preference
-            android:key="device_doze"
-            android:persistent="false"
-            android:summary="@string/advanced_doze_summary"
-            android:title="@string/ambient_display"
-            android:icon="@drawable/ic_doze">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"
-                android:targetPackage="org.lineageos.settings.doze" />
-        </Preference>
         <Preference
             android:key="device_jason"
             android:persistent="false"
