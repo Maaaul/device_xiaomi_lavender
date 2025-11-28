@@ -222,7 +222,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     LavenderCarrierConfigOverlay \
     LavenderDeviceAsWebcam \
-    LavenderDialerOverlay \
     LavenderFrameworksOverlay \
     LavenderRILFrameworksOverlay \
     LavenderRILSettingsOverlay \
