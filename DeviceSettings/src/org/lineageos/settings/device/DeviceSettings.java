@@ -23,7 +23,6 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
-import org.lineageos.settings.device.kcal.KcalSettingsActivity;
 import org.lineageos.settings.device.speaker.ClearSpeakerActivity;
 import org.lineageos.settings.device.preferences.SecureSettingListPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
@@ -66,7 +65,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_DOZE = "device_doze";
-    private static final String PREF_KCAL_SETTINGS = "kcal_settings";
 
     private static final String CATEGORY_HALL_WAKEUP = "hall_wakeup";
     public static final String PREF_HALL_WAKEUP = "hall";
@@ -84,7 +82,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
     private Preference mClearSpeakerPref;
 
-    private Preference mKcalSettingsPref;
     private SecureSettingSwitchPreference mFastcharge;
     private SecureSettingListPreference mTHERMAL;
 
@@ -146,13 +143,6 @@ public class DeviceSettings extends PreferenceFragment implements
         if (isAppNotInstalled(DEVICE_JASON_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_JASON));
         }
-        // Kcal
-        mKcalSettingsPref = (Preference) findPreference(PREF_KCAL_SETTINGS);
-        mKcalSettingsPref.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), KcalSettingsActivity.class);
-            startActivity(intent);
-            return true;
-        });
         // Thermal Switch
         mTHERMAL = (SecureSettingListPreference) findPreference(PREF_THERMAL);
         mTHERMAL.setValue(FileUtils.getValue(THERMAL_PATH));
